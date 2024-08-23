@@ -6,12 +6,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import java.util.List;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 @Entity
-@Getter
-@Setter
+@Data
 public class Cliente {
 
   @Id
@@ -25,12 +23,4 @@ public class Cliente {
   @OneToMany(mappedBy = "cliente")
   private List<Compra> compras;
 
-  @Override
-  public String toString() {
-    return "Cliente{" +
-        "id=" + id +
-        ", nome='" + nome + '\'' +
-        ", cpf='" + cpf + '\'' +
-        '}';
-  }
 }

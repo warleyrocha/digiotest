@@ -1,0 +1,57 @@
+[
+  {
+    "nome": "Geraldo Pedro Julio Nascimento",
+    "cpf": "05870189179",
+    "codigo": "5",
+    "tipoVinho": "Chardonnay",
+    "preco": 128.99,
+    "safra": 2021,
+    "ano": 2022,
+    "quantidade": 3,
+    "total": 386.97
+  },
+  {
+    "nome": "Geraldo Pedro Julio Nascimento",
+    "cpf": "05870189179",
+    "codigo": "15",
+    "tipoVinho": "Chardonnay",
+    "preco": 188.99,
+    "safra": 2021,
+    "ano": 2022,
+    "quantidade": 4,
+    "total": 755.96
+  },
+  {
+    "nome": "Maitê Kamilly Corte Real",
+    "cpf": "022484638124",
+    "codigo": "15",
+    "tipoVinho": "Chardonnay",
+    "preco": 188.99,
+    "safra": 2021,
+    "ano": 2022,
+    "quantidade": 4,
+    "total": 755.96
+  },
+  {
+    "nome": "Andreia Emanuelly da Mata",
+    "cpf": "27737287426",
+    "codigo": "5",
+    "tipoVinho": "Chardonnay",
+    "preco": 128.99,
+    "safra": 2021,
+    "ano": 2022,
+    "quantidade": 6,
+    "total": 773.94
+  },
+  {
+    "nome": "Ian Joaquim Giovanni Santos",
+    "cpf": "96718391344",
+    "codigo": "15",
+    "tipoVinho": "Chardonnay",
+    "preco": 188.99,
+    "safra": 2021,
+    "ano": 2022,
+    "quantidade": 6,
+    "total": 1133.94
+  }
+]

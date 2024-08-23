@@ -1,17 +1,21 @@
 spring:
-    application:
-      name: digiotest
+  application:
+    name: digiotest
 
-    datasource:
-      url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1
-      driverClassName: org.h2.Driver
-      username: sa
-      password: password
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
 
-    jpa:
-      hibernate:
-        ddl-auto: update
+  jpa:
+    hibernate:
+      ddl-auto: update
 
-    h2:
-      console:
-        enabled: true
+  h2:
+    console:
+      enabled: true
+
+server:
+  servlet:
+    contextPath: "/digiotest"
