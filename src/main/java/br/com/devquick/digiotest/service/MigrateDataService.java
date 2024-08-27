@@ -58,4 +58,10 @@ public class MigrateDataService {
       throw new ImportFileException("Erro ao criar dados de produtos no banco!");
     }
   }
+
+  public void clearData() {
+    compraRepository.deleteAll();
+    clienteRepository.deleteAll();
+    produtoRepository.deleteAll();
+  }
 }

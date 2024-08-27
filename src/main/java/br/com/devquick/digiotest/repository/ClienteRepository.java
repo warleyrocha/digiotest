@@ -3,7 +3,6 @@ package br.com.devquick.digiotest.repository;
 import br.com.devquick.digiotest.model.Cliente;
 import br.com.devquick.digiotest.model.dto.ClienteFielDTO;
 import java.util.List;
-import org.springframework.data.domain.Limit;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -21,5 +20,6 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
        JOIN compra.produto produto
        GROUP BY cliente.id, cliente.nome, cliente.cpf
       """)
-  List<ClienteFielDTO> findClientesFieis(Limit limit);
+  List<ClienteFielDTO> findClientesFieis();
+
 }

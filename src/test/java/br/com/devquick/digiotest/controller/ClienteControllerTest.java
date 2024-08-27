@@ -1,11 +1,13 @@
 package br.com.devquick.digiotest.controller;
 
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import br.com.devquick.digiotest.model.response.ClienteResponse;
 import br.com.devquick.digiotest.service.ClienteService;
+import br.com.devquick.digiotest.utils.exception.CompraNotFoundException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
@@ -61,13 +63,35 @@ class ClienteControllerTest {
         .andExpect(status().is2xxSuccessful());
   }
 
-  @DisplayName("Should return 500 When it has a generic Exception")
+  @DisplayName("Should return 500 when it has a generic Exception")
   @Test
   void testGenericException() throws Exception {
     when(clienteService.findClientesFieis())
         .thenThrow(new RuntimeException());
 
     mockMvc.perform(get("/clientes-fieis")
+            .accept(MediaType.APPLICATION_JSON))
+        .andExpect(status().isInternalServerError());
+  }
+
+  @DisplayName("Should return 404 when does not find Entity Compra")
+  @Test
+  void testEntityCompraNotFound() throws Exception {
+    when(clienteService.findWineRecommendation("12345678900"))
+        .thenThrow(new CompraNotFoundException("TEST"));
+
+    mockMvc.perform(get("/recomendacao/cliente/12345678900/tipo")
+            .accept(MediaType.APPLICATION_JSON))
+        .andExpect(status().isNotFound());
+  }
+
+  @DisplayName("Should return 500 when it has a generic Exception")
+  @Test
+  void testGenericRecommendationException() throws Exception {
+    when(clienteService.findWineRecommendation(any()))
+        .thenThrow(new RuntimeException());
+
+    mockMvc.perform(get("/recomendacao/cliente/12345678900/tipo")
             .accept(MediaType.APPLICATION_JSON))
         .andExpect(status().isInternalServerError());
   }

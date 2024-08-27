@@ -17,7 +17,9 @@ public class TestDigiotestApplication implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws ImportFileException {
-    String produtoJsonFilePath = "src/main/resources/data/produtos.json";
+    migrateDataService.clearData();
+
+    String produtoJsonFilePath = "src/test/resources/data/produtos.json";
     migrateDataService.migrateProdutoJsonToDatabase(Paths.get(produtoJsonFilePath));
 
     String clienteJsonFilePath = "src/test/resources/data/clientes.json";
