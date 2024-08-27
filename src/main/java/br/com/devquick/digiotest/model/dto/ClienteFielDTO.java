@@ -3,22 +3,27 @@ package br.com.devquick.digiotest.model.dto;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import lombok.Data;
+import lombok.ToString;
 
 @Data
+@ToString
 public class ClienteFielDTO {
 
   private Long id;
 
-  private Integer quantidade;
+  private String nome;
 
-  private BigDecimal preco;
+  private String cpf;
+
+  private Integer amount;
 
   private BigDecimal total;
 
-  public ClienteFielDTO(Long id, Integer quantidade, BigDecimal preco) {
+  public ClienteFielDTO(Long id, String nome, String cpf, Long amount, BigDecimal total) {
     this.id = id;
-    this.quantidade = quantidade;
-    this.preco = preco;
-    this.total = preco.multiply(BigDecimal.valueOf(quantidade)).setScale(2, RoundingMode.UP);
+    this.nome = nome;
+    this.cpf = cpf;
+    this.amount = amount.intValue();
+    this.total = total.setScale(2, RoundingMode.UP);
   }
 }

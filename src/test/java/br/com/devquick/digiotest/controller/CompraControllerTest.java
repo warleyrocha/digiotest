@@ -134,31 +134,4 @@ class CompraControllerTest {
         .andExpect(content().string(endsWith("1133.94}]")));
   }
 
-
- /* @DisplayName("Should get biggest compra ordered")
-  @Test
-  void testMaiorCompraSuccess() throws CompraNotFoundException {
-    Mockito.when(compraRepository.findResponseComprasByAno(Mockito.any()))
-        .thenReturn(expectedCompras);
-
-    CompraResponse response = compraService.findMaiorCompraByAno(2022);
-    assertEquals(new BigDecimal("1133.94"), response.getTotal());
-    assertEquals(2021, response.getSafra());
-    assertEquals(2022, response.getAno());
-
-  }
-
-  @DisplayName("Should get all Compras ordered")
-  @Test
-  void testComprasSuccess() throws CompraNotFoundException {
-    Mockito.when(compraRepository.findResponseCompras())
-        .thenReturn(expectedCompras);
-
-    List<CompraResponse> response = compraService.findComprasOrderByTotal();
-    assertEquals(new BigDecimal("386.97"), response.get(0).getTotal());
-    assertEquals(new BigDecimal("1133.94"), response.get(response.size() - 1).getTotal());
-
-  }
-*/
-
 }

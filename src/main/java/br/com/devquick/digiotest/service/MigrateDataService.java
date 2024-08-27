@@ -41,6 +41,7 @@ public class MigrateDataService {
         clienteRepository.save(cliente);
         cliente.getCompras().forEach(compra -> {
           compra.setCliente(cliente);
+          compra.setProduto(produtoRepository.findByCodigo(compra.getProduto().getCodigo()));
           compraRepository.save(compra);
         });
       });

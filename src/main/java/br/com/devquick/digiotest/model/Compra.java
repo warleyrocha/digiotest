@@ -21,6 +21,7 @@ public class Compra {
   private Cliente cliente;
 
   @ManyToOne
+  @JoinColumn(name="codigo", nullable=false)
   private Produto produto;
 
   private int quantidade;

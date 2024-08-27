@@ -1,6 +1,6 @@
 package br.com.devquick.digiotest.utils;
 
-import br.com.devquick.digiotest.model.Cliente;
+import br.com.devquick.digiotest.model.dto.ClienteFielDTO;
 import br.com.devquick.digiotest.model.response.ClienteResponse;
 import java.util.List;
 import org.mapstruct.Mapper;
@@ -8,8 +8,8 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring")
 public interface ClienteMapper {
 
-  List<ClienteResponse> toResponseList(List<Cliente> clientes);
+  List<ClienteResponse> toResponseList(List<ClienteFielDTO> clientes);
 
-  ClienteResponse toResponse(Cliente cliente);
+  ClienteResponse toResponse(ClienteFielDTO cliente);
 
 }
